@@ -15,7 +15,8 @@ export interface ServerRespond {
 
 class DataStreamer {
   // The url where datafeed server is listening
-  static API_URL: string = 'http://localhost:8080/query?id=1';
+  // have to change the server address as well to 8082 instead of 8080
+  static API_URL: string = 'http://localhost:8082/query?id=1';
 
   /**
    * Send request to the datafeed server and executes callback function on success

@@ -218,7 +218,8 @@ def get(req_handler, routes):
                 return
 
 
-def run(routes, host='0.0.0.0', port=8080):
+#Had to change the port to 8081 instead of 8080 due to a local conflict.
+def run(routes, host='0.0.0.0', port=8082):
     """ Runs a class as a server whose methods have been decorated with
         @route.
     """
@@ -234,7 +235,8 @@ def run(routes, host='0.0.0.0', port=8080):
     thread = threading.Thread(target=server.serve_forever)
     thread.daemon = True
     thread.start()
-    print('HTTP server started on port 8080')
+    #just to be consistent with the change above
+    print('HTTP server started on port %s' %port)
     while True:
         from time import sleep
         sleep(1)
